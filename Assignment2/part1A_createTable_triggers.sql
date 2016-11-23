@@ -20,7 +20,6 @@ BEGIN
     SELECT :old.ECode INTO :new.ECode FROM dual;
   END IF;
 END;
---DROP TRIGGER trg_emp_ecode;
 -----------------------------
 
 --EMPLOYEE DELIVERYTIME DEFAULT VALUE--
@@ -31,5 +30,4 @@ WHEN (new.DeliveryTime IS NULL)
 BEGIN
   SELECT :new.OrderTime + 30/1440 INTO :new.DeliveryTime FROM dual;
 END;
---DROP TRIGGER trg_order_deliverytime;
 -----------------------------
